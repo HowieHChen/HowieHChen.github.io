@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width"/>
+        <link rel="stylesheet" type="text/css" href="QAStyle.css">
+        <title>爱情态度量表（LAS）</title>
+        <script type="text/javascript" src="QAService.js"></script>
+    </head>
+    <body>
+        <div id="welcomePage">
+            <div class="cardView">
+                <h1 class="wp__heading">爱情态度量表</h1>
+                <p class="wp__subheading">了解你对爱情所持的态度</p>
+                <p class="wp__introduction">题目中的“他/她”，是指目前与你密切交往的男/女朋友。请以您目前的恋人为回答依据；若目前没有恋人，请就上任对象作答；若没有谈过恋爱，也请您想像一下再作答</p>
+                <input class="btn_start" type="button" name="btn_start" value="开始" onclick="onclickStart()">
+            </div>
+        </div>
+        
+        <div id="answerPage">
+            <h1>爱情态度量表（LAS）测试</h1>
+            <br>
+
+            <div id="questions"></div>
+
+            <input type="button" name="btn_result" value="获取结果" onclick="onclickResult()">
+        </div>
+
+        <div id="resultPage">
+            <h1>结果</h1>
+
+            <br>浪漫型：<br>
+            <div id="result1"></div>
+            描述文本1<br>
+
+            <br>游戏型：<br>
+            <div id="result2"></div>
+            描述文本2<br>
+
+            <br>同伴型：<br>
+            <div id="result3"></div>
+            描述文本3<br>
+
+            <br>现实型：<br>
+            <div id="result4"></div>
+            描述文本4<br>
+
+            <br>占有型：<br>
+            <div id="result5"></div>
+            描述文本5<br>
+
+            <br>奉献型：<br>
+            <div id="result6"></div>
+            描述文本6<br>
+
+            <input type="button" name="btn_back" value="返回" onclick="onclickBack()">
+        </div>
+    </body>
+</html>
