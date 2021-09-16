@@ -44,6 +44,16 @@ var Q_DETAILS = new Array(
 ); //题目细节
 var Q_NUMBER = Q_DETAILS.length; //题目总数
 
+var A_DETAILS = new Array(
+    "最注重的是对方的外表和身体的接触，只要是好看的，就容易跟对方坠入情网。",
+    "视爱情为游戏，爱情的关系短暂，经常更换对象，承诺在这种类型的人身上几乎看不到。",
+    "感情发展细水长流，平静而祥和，通常刚开始时都只是好朋友的关系，后来才慢慢从相知友谊发展成爱情。",
+    "选择对象以理性条件的考虑为主，诸如教育背景、经济能力、社会地位、共同兴趣等。",
+    "占有欲和妒忌心强烈，关系也有如风暴，起伏不定，对方一点爱意的表示就会让他狂喜，一点点降温或关系出现点小问题就会痛苦不已。",
+    "与占有型相反，这种类型的人为爱人完全付出自己，关心对方而不求回报。这种人极有耐心、不要求对方，甚至不嫉妒。"
+)
+
+
 var qGroup = new Array();//题目分组
 qGroup[0] = new Array(1,7,13,19,25,31,37);
 qGroup[1] = new Array(2,8,14,20,26,32,38);
@@ -64,19 +74,19 @@ function onclickStart(){
     var allQuestions = "";
 
     for (var i = 0; i < Q_NUMBER; i++){
-        allQuestions += (Q_DETAILS[i] + "<br>"
-            + "<label><input type='radio' name='q" + (i+1) + "' value='1' onclick='setValue(this)'>完全不符合</label><br>"
-            + "<label><input type='radio' name='q" + (i+1) + "' value='2' onclick='setValue(this)'>不符合</label><br>"
-            + "<label><input type='radio' name='q" + (i+1) + "' value='3' onclick='setValue(this)'>没意见</label><br>"
-            + "<label><input type='radio' name='q" + (i+1) + "' value='4' onclick='setValue(this)'>符合</label><br>"
-            + "<label><input type='radio' name='q" + (i+1) + "' value='5' onclick='setValue(this)'>完全符合</label><br>"
-            + "<br>")
+        allQuestions += ("<div class='container__answers'>" + Q_DETAILS[i] + "<br>"
+            + "<label class='container__radio'><input class='radio' type='radio' name='q" + (i+1) + "' value='1' onclick='setValue(this)'>完全不符合</label><br>"
+            + "<label class='container__radio'><input class='radio' type='radio' name='q" + (i+1) + "' value='2' onclick='setValue(this)'>不符合</label><br>"
+            + "<label class='container__radio'><input class='radio' type='radio' name='q" + (i+1) + "' value='3' onclick='setValue(this)'>没意见</label><br>"
+            + "<label class='container__radio'><input class='radio' type='radio' name='q" + (i+1) + "' value='4' onclick='setValue(this)'>符合</label><br>"
+            + "<label class='container__radio'><input class='radio' type='radio' name='q" + (i+1) + "' value='5' onclick='setValue(this)'>完全符合</label><br>"
+            + "</div>")
             
     }
 
     document.getElementById("questions").innerHTML = allQuestions;
 
-    document.getElementById("answerPage").style.display="inline";
+    document.getElementById("answerPage").style.display="flex";
     document.getElementById("welcomePage").style.display="none";
 }
 
@@ -116,11 +126,28 @@ if (valueCheck){
     document.getElementById("result6").innerHTML = valueSum[5].toString();
 
     document.getElementById("answerPage").style.display="none";
-    document.getElementById("resultPage").style.display="inline";
+    document.getElementById("resultPage").style.display="flex";
+    document.getElementById("detailCard").style.display="none";
 }
 }
 
 function onclickBack(){
-    document.getElementById("answerPage").style.display="inline";
+    document.getElementById("answerPage").style.display="flex";
     document.getElementById("resultPage").style.display="none";
+}
+
+function onclickDetail(obj){
+    var tempstr = obj.value;
+    var i = parseInt((obj.name).slice(8)) - 1; //截取id的数字部分
+    document.getElementById("analysisType").innerHTML = tempstr;
+    document.getElementById("analysisScore").innerHTML = valueSum[i].toString();
+    document.getElementById("analysisDetail").innerHTML = A_DETAILS[i].toString();
+    
+    document.getElementById("detailCard").style.display="inline";
+    document.getElementById("resultCard").style.display="none";
+}
+
+function onclickDetailBack(){
+    document.getElementById("detailCard").style.display="none";
+    document.getElementById("resultCard").style.display="inline";
 }
