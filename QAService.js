@@ -93,10 +93,12 @@ function onclickStart(){
 function onclickResult(){
 var valueCheck = false;
 
+/*
 //调试部分快速赋值
 for (var i = 0; i < Q_NUMBER; i++){
     allValue[i] = (i + 1);
 }
+*/
 
 //检查答题情况
 for (var i = 0; i < Q_NUMBER; i++){
@@ -142,7 +144,7 @@ function onclickDetail(obj){
     document.getElementById("analysisType").innerHTML = tempstr;
     document.getElementById("analysisScore").innerHTML = valueSum[i].toString();
     document.getElementById("analysisDetail").innerHTML = A_DETAILS[i].toString();
-    
+
     document.getElementById("detailCard").style.display="inline";
     document.getElementById("resultCard").style.display="none";
 }
