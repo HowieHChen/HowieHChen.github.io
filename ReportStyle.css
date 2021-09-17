@@ -1,0 +1,41 @@
+body{
+    font-size: 100%;
+    min-width: 352px;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.container__content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 352px;
+    min-height: 100vh;
+}
+.container__header{
+    order: 0;
+}
+.container__main{
+    order: 1;
+}
+.container__footer{
+    order: 2;
+    display: flex;
+    min-height: 72px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.footer__btn__github{
+    line-height: 1;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: rgba(0,0,0,0.6);
+    text-decoration: none;
+    background-color: transparent;
+    border: 0;
+}
+.footer__btn__github:hover{
+    text-decoration: underline;
+}

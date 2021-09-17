@@ -93,12 +93,12 @@ function onclickStart(){
 function onclickResult(){
 var valueCheck = false;
 
-/*
+// /*
 //调试部分快速赋值
 for (var i = 0; i < Q_NUMBER; i++){
     allValue[i] = (i + 1);
 }
-*/
+// */
 
 //检查答题情况
 for (var i = 0; i < Q_NUMBER; i++){
@@ -145,11 +145,22 @@ function onclickDetail(obj){
     document.getElementById("analysisScore").innerHTML = valueSum[i].toString();
     document.getElementById("analysisDetail").innerHTML = A_DETAILS[i].toString();
 
-    document.getElementById("detailCard").style.display="inline";
+    document.getElementById("detailCard").style.display="flex";
     document.getElementById("resultCard").style.display="none";
 }
 
 function onclickDetailBack(){
     document.getElementById("detailCard").style.display="none";
-    document.getElementById("resultCard").style.display="inline";
+    document.getElementById("resultCard").style.display="flex";
+}
+
+function onclickDetailAnalysis(){
+    var resultQuery = "result1=" + valueSum[0];
+    for(var i = 1; i < valueSum.length; i++)
+    {
+        resultQuery += ("&result" + (i + 1) + "=" + valueSum[i]);
+    }
+    url = "report.html?" + resultQuery;
+    console.log(url);
+    window.location.href = url;
 }

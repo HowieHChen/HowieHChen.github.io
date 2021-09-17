@@ -43,33 +43,38 @@
             <header class="headerView">
                 <h1 class="container__wpheader"></h1>
             </header>
-
-            <main class="cardView" id="resultCard">
-                <h1 class="wp__heading">测试结果</h1>
-                <p class="wp__subheading">数值为每种类型的得分，可点击查看类型说明</p>
-                <div class="rp__resultgroup">
-                    <input class="btn__analysis" type="button" name="btn_type1" value="浪漫型：" onclick="onclickDetail(this)"><div id="result1"></div>
-                    <input class="btn__analysis" type="button" name="btn_type2" value="游戏型：" onclick="onclickDetail(this)"><div id="result2"></div>
-                    <input class="btn__analysis" type="button" name="btn_type3" value="同伴型：" onclick="onclickDetail(this)"><div id="result3"></div>
-                    <input class="btn__analysis" type="button" name="btn_type4" value="现实型：" onclick="onclickDetail(this)"><div id="result4"></div>
-                    <input class="btn__analysis" type="button" name="btn_type5" value="占有型：" onclick="onclickDetail(this)"><div id="result5"></div>
-                    <input class="btn__analysis" type="button" name="btn_type6" value="奉献型：" onclick="onclickDetail(this)"><div id="result6"></div>
+            <main class="rp__main">
+                <div class="rp__contentcontainer" id="resultCard">
+                    <div class="cardView" >
+                        <h1 class="wp__heading">测试结果</h1>
+                        <p class="wp__subheading">数值为每种类型的得分，可点击查看类型说明</p>
+                        <div class="rp__resultgroup">
+                            <input class="btn__analysis" type="button" name="btn_type1" value="浪漫型：" onclick="onclickDetail(this)"><div id="result1"></div>
+                            <input class="btn__analysis" type="button" name="btn_type2" value="游戏型：" onclick="onclickDetail(this)"><div id="result2"></div>
+                            <input class="btn__analysis" type="button" name="btn_type3" value="同伴型：" onclick="onclickDetail(this)"><div id="result3"></div>
+                            <input class="btn__analysis" type="button" name="btn_type4" value="现实型：" onclick="onclickDetail(this)"><div id="result4"></div>
+                            <input class="btn__analysis" type="button" name="btn_type5" value="占有型：" onclick="onclickDetail(this)"><div id="result5"></div>
+                            <input class="btn__analysis" type="button" name="btn_type6" value="奉献型：" onclick="onclickDetail(this)"><div id="result6"></div>
+                        </div>
+                        <div class="container__btn_start">
+                            <input class="btn_start" type="button" name="btn_back" value="查看报告" onclick="onclickDetailAnalysis()">
+                        </div>
+                    </div>
+                    <div class="container__btn_back">
+                        <label class="btn_backtext">想要重新选择？
+                            <input class="btn_back" type="button" name="btn_detailanalysis" value="返回" onclick="onclickBack()">
+                        </label>
+                    </div>
                 </div>
-
-                <div class="container__btn_start">
-                    <input class="btn_start" type="button" name="btn_back" value="返回" onclick="onclickBack()">
+                <div class="rp__cardView" id="detailCard">
+                    <h1 class="wp__heading" id="analysisType"></h1>
+                    <p class="rp__subheading" id="analysisScore"></p>
+                    <p class="rp__introduction" id="analysisDetail"></p>
+                    <div class="container__btn_start">
+                        <input class="btn_start" type="button" name="btn_backdetail" value="返回" onclick="onclickDetailBack()">
+                    </div>
                 </div>
             </main>
-
-            <div class="cardView" id="detailCard">
-                <h1 class="wp__heading" id="analysisType"></h1>
-                <p class="rp__subheading" id="analysisScore"></p>
-                <p class="rp__introduction" id="analysisDetail"></p>
-                <div class="container__btn_start">
-                    <input class="btn_start" type="button" name="btn_back" value="返回" onclick="onclickDetailBack()">
-                </div>
-            </div>
-
             <footer class="footerView">
                 <a href="" class="btn__github">Github</a>
             </footer>

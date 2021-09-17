@@ -282,6 +282,31 @@ body{
     padding: 0;
     border: 0;
 }
+.rp__main{
+    order: 1;
+    margin: auto;
+}
+.rp__cardView{
+    display: flex;
+    flex-direction: column;
+    width: 352px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 12px rgb(0 0 0 / 15%);
+    border-radius: 8px;
+    padding: 24px;
+    margin: auto;
+}
+@media only screen and (max-width: 769px){
+    .rp__cardView{
+        width: 100%;
+        min-width: 352px;
+        max-width: 416px;
+        box-sizing: border-box;
+        box-shadow: unset;
+        padding: 0 32px;
+    }
+}
+
 .rp__resultgroup{
     line-height: 1.33333;
     font-size: 1rem;
@@ -316,6 +341,54 @@ body{
     background: #d0e8ff;
     text-decoration: underline;
 }
+.rp__contentcontainer{
+    display: flex;
+    flex-direction: column;
+}
+.container__btn_back{
+    order: 2;
+    display: flex;
+    flex-direction: row;
+    min-height: 72px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    
+}
+.btn_backtext{
+    display: inline-block;
+    height: 32px;
+    line-height: 32px;
+    font-size: 1rem;
+    font-weight: 400;
+    text-align: center;
+    vertical-align: middle;
+    text-align: center;
+}
+.btn_back{
+    position: relative;
+    background-color: rgba(0,0,0,0);
+    border: 0;
+    box-sizing: border-box;
+    padding: 0 8px;
+    display: inline-block;
+    font-size: 1rem;
+    font-weight: 600;
+    height: 32px;
+    line-height: 32px;
+    text-align: center;
+    text-decoration: none;
+    transition-duration: 167ms;
+    transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    vertical-align: middle;
+    z-index: 0;
+    color: #0a66c2;
+    border-radius: 28px;
+}
+.btn_back:hover{
+    background: #d0e8ff;
+    text-decoration: underline;
+}
 .rp__subheading{
     line-height: 1.33333;
     font-size: 1rem;
@@ -331,3 +404,8 @@ body{
     margin: 0;
     margin-top: 16px;
 }
+
+
+
+
+
