@@ -72,7 +72,6 @@ function setValue(obj){
 
 function onclickStart(){
     var allQuestions = "";
-
     for (var i = 0; i < Q_NUMBER; i++){
         allQuestions += ("<div class='container__answers'>" + Q_DETAILS[i] + "<br>"
             + "<label class='container__radio'><input class='radio' type='radio' name='q" + (i+1) + "' value='1' onclick='setValue(this)'>完全不符合</label><br>"
@@ -83,54 +82,54 @@ function onclickStart(){
             + "</div>")
             
     }
-
+    //输出问题
     document.getElementById("questions").innerHTML = allQuestions;
-
+    //切换页面
     document.getElementById("answerPage").style.display="flex";
     document.getElementById("welcomePage").style.display="none";
 }
 
 function onclickResult(){
-var valueCheck = false;
+    var valueCheck = false;
 
-// /*
-//调试部分快速赋值
-for (var i = 0; i < Q_NUMBER; i++){
-    allValue[i] = (i + 1);
-}
-// */
-
-//检查答题情况
-for (var i = 0; i < Q_NUMBER; i++){
-    if (allValue[i] == 0){
-        valueCheck = true;
-        break;
+    // /*
+    //调试部分快速赋值
+    for (var i = 0; i < Q_NUMBER; i++){
+        allValue[i] = (i + 1);
     }
-}
+    // */
 
-if (valueCheck){
-    alert("请回答完所有问题！");
-}else{
-    //统计结果
-    for (var i = 0; i < 6; i++){
-        valueSum[i] = 0;
-        for (var j = 0; j < qGroup[i].length; j++ ){
-            valueSum[i] += allValue[qGroup[i][j] - 1];
+    //检查答题情况
+    for (var i = 0; i < Q_NUMBER; i++){
+        if (allValue[i] == 0){
+            valueCheck = true;
+            break;
         }
-        //console.log(i,valueSum[i]);
     }
-    //输出结果
-    document.getElementById("result1").innerHTML = valueSum[0].toString();
-    document.getElementById("result2").innerHTML = valueSum[1].toString();
-    document.getElementById("result3").innerHTML = valueSum[2].toString();
-    document.getElementById("result4").innerHTML = valueSum[3].toString();
-    document.getElementById("result5").innerHTML = valueSum[4].toString();
-    document.getElementById("result6").innerHTML = valueSum[5].toString();
 
-    document.getElementById("answerPage").style.display="none";
-    document.getElementById("resultPage").style.display="flex";
-    document.getElementById("detailCard").style.display="none";
-}
+    if (valueCheck){
+        alert("请回答完所有问题！");
+    }else{
+        //统计结果
+        for (var i = 0; i < 6; i++){
+            valueSum[i] = 0;
+            for (var j = 0; j < qGroup[i].length; j++ ){
+                valueSum[i] += allValue[qGroup[i][j] - 1];
+            }
+            //console.log(i,valueSum[i]);
+        }
+        //输出结果
+        document.getElementById("result1").innerHTML = valueSum[0].toString();
+        document.getElementById("result2").innerHTML = valueSum[1].toString();
+        document.getElementById("result3").innerHTML = valueSum[2].toString();
+        document.getElementById("result4").innerHTML = valueSum[3].toString();
+        document.getElementById("result5").innerHTML = valueSum[4].toString();
+        document.getElementById("result6").innerHTML = valueSum[5].toString();
+        //切换页面
+        document.getElementById("answerPage").style.display="none";
+        document.getElementById("resultPage").style.display="flex";
+        document.getElementById("detailCard").style.display="none";
+    }
 }
 
 function onclickBack(){
@@ -144,8 +143,8 @@ function onclickDetail(obj){
     document.getElementById("analysisType").innerHTML = tempstr;
     document.getElementById("analysisScore").innerHTML = valueSum[i].toString();
     document.getElementById("analysisDetail").innerHTML = A_DETAILS[i].toString();
-
     document.getElementById("detailCard").style.display="flex";
+    document.getElementById("detailCard").style.flexDirection="column"
     document.getElementById("resultCard").style.display="none";
 }
 
@@ -156,11 +155,9 @@ function onclickDetailBack(){
 
 function onclickDetailAnalysis(){
     var resultQuery = "result1=" + valueSum[0];
-    for(var i = 1; i < valueSum.length; i++)
-    {
+    for(var i = 1; i < valueSum.length; i++){
         resultQuery += ("&result" + (i + 1) + "=" + valueSum[i]);
     }
     url = "report.html?" + resultQuery;
-    console.log(url);
     window.location.href = url;
 }

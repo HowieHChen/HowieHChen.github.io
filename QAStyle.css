@@ -9,47 +9,99 @@ body{
 #welcomePage{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     min-width: 352px;
-    min-height: 100vh;
-    margin: 0;
-    padding: 0;
-    border: 0;
+    height: 100vh;
 }
-.headerView{
+#answerPage{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    min-width: 352px;
+    height: 100vh;
+}
+#resultPage{
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    min-width: 352px;
+    height: 100vh;
+}
+
+.container__header{
     order: 0;
-    display: block;
-    min-height: 65px;
+    display: flex;
+    flex-direction: row;
+    min-height: 64px;
+    width: 100%;
 }
-.container__wpheader{
+.container__header2{
+    order: 0;
+    display: flex;
+    flex-direction: row;
+    min-height: 64px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    background:#0a66c2;
+    box-shadow: 0 2px 4px -1px rgb(0 0 0 / 20%), 0 4px 5px 0 rgb(0 0 0 / 14%), 0 1px 10px 0 rgb(0 0 0 / 12%);
+    z-index: 100;
+    top: 0;
+    position: fixed;
+}
+.container__main{
+    order: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.container__footer{
+    order: 2;
+    display: flex;
+    flex-direction: row;
+    min-height: 72px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.content__header{
     margin: 32px 0 0 56px;
     color: #0a66c2;
     font-size: 1.8rem;
+    font-weight: 400;
 }
-.cardView{
-    order: 1;
+.content__header2{
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: 400;
+}
+.content__footer{
+    line-height: 1;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: rgba(0,0,0,0.6);
+    text-decoration: none;
+    background-color: transparent;
+    border: 0;
+}
+.content__footer:hover{
+    text-decoration: underline;
+}
+
+.container__cardView{
+    order: 0;
     width: 352px;
     background-color: #ffffff;
     box-shadow: 0 4px 12px rgb(0 0 0 / 15%);
     border-radius: 8px;
     padding: 24px;
     margin: auto;
-    top: 32px;
-    bottom: 32px;
-    left: 0;
-    right: 0;
 }
-@media only screen and (max-width: 769px){
-    .cardView{
-        width: 100%;
-        min-width: 352px;
-        max-width: 416px;
-        box-sizing: border-box;
-        box-shadow: unset;
-        padding: 0 32px;
-    }
-}
-.wp__heading{
+.cardView__heading{
     font-size: 2rem;
     line-height: 1.25;
     font-weight: 600;
@@ -57,14 +109,21 @@ body{
     padding: 0 0 4px 0;
     margin: 0;
 }
-.wp__subheading{
+.cardView__subheading{
     line-height: 1.33333;
     font-size: 1rem;
     font-weight: 500;
     color: rgba(0,0,0,0.9);
     margin: 0;
 }
-.wp__introduction{
+.cardView__subheading2{
+    line-height: 1.33333;
+    font-size: 1rem;
+    font-weight: 600;
+    color: rgba(0,0,0,0.9);
+    margin: 0;
+}
+.cardView__introduction{
     line-height: 1.33333;
     font-size: 1rem;
     font-weight: 400;
@@ -72,7 +131,15 @@ body{
     margin: 0;
     margin-top: 16px;
 }
-.btn__learnmore{
+.cardView__introduction2{
+    line-height: 1.33333;
+    font-size: 1rem;
+    font-weight: 600;
+    color: rgba(0,0,0,0.6);
+    margin: 0;
+    margin-top: 16px;
+}
+.cardView__btn__learnmore{
     position: relative;
     left: -8px;
     margin-top: 8px;
@@ -94,27 +161,24 @@ body{
     color: #0a66c2;
     border-radius: 28px;
 }
-.btn__learnmore:hover{
+.cardView__btn__learnmore:hover{
     background: #d0e8ff;
     text-decoration: underline;
 }
-.container__btn_start{
+.cardView__container__btn_main{
     padding-top: 24px;
 }
-.btn_start{
+.cardView__content__btn_main{
     height: 52px;
     line-height: 52px;
     width: 100%;
     border: 0;
     box-sizing: border-box;
-
     font-size: 1rem;
     font-weight: 600;
-    
     color: #ffffff;
     background: #0a66c2;
     align-content: center;
-
     padding: 0 24px;
     position: relative;
     text-align: center;
@@ -123,66 +187,10 @@ body{
     vertical-align: middle;
     border-radius: 28px;
 }
-.btn_start:hover{
+.cardView__content__btn_main:hover{
     background:#004182;
 }
-.footerView{
-    order: 2;
-    display: flex;
-    min-height: 72px;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-}
-.btn__github{
-    line-height: 1;
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: rgba(0,0,0,0.6);
-    text-decoration: none;
-    background-color: transparent;
-    border: 0;
-}
-.btn__github:hover{
-    text-decoration: underline;
-}
 
-
-#answerPage{
-    display: none;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-width: 352px;
-    min-height: 100vh;
-    margin: 0;
-    padding: 0;
-    border: 0;
-}
-.container__header{
-    left: 0;
-    top: 0;
-    right: 0;
-    height: 64px;
-    line-height: 64px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-sizing: border-box;
-    position: fixed;
-    background:#0a66c2;
-    box-shadow: 0 2px 4px -1px rgb(0 0 0 / 20%), 0 4px 5px 0 rgb(0 0 0 / 14%), 0 1px 10px 0 rgb(0 0 0 / 12%);
-    width: 100%;
-    z-index: 100;
-}
-.container__header>*{
-    margin: 0px;
-}
-.ap__heading{
-    font-weight: 400;
-    font-size: 24px;
-    color: #ffffff;
-}
 .container__questions{
     margin-top: 64px;
     padding: 16px;
@@ -243,6 +251,7 @@ body{
     top: 4px;
     left: 4px;
 }
+
 .container__btn_result{
     padding: 16px 0px;
 }
@@ -252,14 +261,11 @@ body{
     width: 100%;
     border: 0;
     box-sizing: border-box;
-
     font-size: 1rem;
     font-weight: 600;
-    
     color: #ffffff;
     background: #0a66c2;
     align-content: center;
-
     padding: 0 24px;
     position: relative;
     text-align: center;
@@ -271,43 +277,7 @@ body{
 .btn_result:hover{
     background:#004182;
 }
-
-#resultPage{
-    display: none;
-    flex-direction: column;
-    justify-content: center;
-    min-width: 352px;
-    min-height: 100vh;
-    margin: 0;
-    padding: 0;
-    border: 0;
-}
-.rp__main{
-    order: 1;
-    margin: auto;
-}
-.rp__cardView{
-    display: flex;
-    flex-direction: column;
-    width: 352px;
-    background-color: #ffffff;
-    box-shadow: 0 4px 12px rgb(0 0 0 / 15%);
-    border-radius: 8px;
-    padding: 24px;
-    margin: auto;
-}
-@media only screen and (max-width: 769px){
-    .rp__cardView{
-        width: 100%;
-        min-width: 352px;
-        max-width: 416px;
-        box-sizing: border-box;
-        box-shadow: unset;
-        padding: 0 32px;
-    }
-}
-
-.rp__resultgroup{
+.container__result{
     line-height: 1.33333;
     font-size: 1rem;
     font-weight: 600;
@@ -341,7 +311,7 @@ body{
     background: #d0e8ff;
     text-decoration: underline;
 }
-.rp__contentcontainer{
+.container__resultpage{
     display: flex;
     flex-direction: column;
 }
@@ -389,23 +359,14 @@ body{
     background: #d0e8ff;
     text-decoration: underline;
 }
-.rp__subheading{
-    line-height: 1.33333;
-    font-size: 1rem;
-    font-weight: 600;
-    color: rgba(0,0,0,0.9);
-    margin: 0;
+
+@media only screen and (max-width: 769px){
+    .container__cardView{
+        width: 100%;
+        min-width: 352px;
+        max-width: 416px;
+        box-sizing: border-box;
+        box-shadow: unset;
+        padding: 0 32px;
+    }
 }
-.rp__introduction{
-    line-height: 1.33333;
-    font-size: 1rem;
-    font-weight: 600;
-    color: rgba(0,0,0,0.6);
-    margin: 0;
-    margin-top: 16px;
-}
-
-
-
-
-
